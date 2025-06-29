@@ -2,3 +2,5 @@
 # pixi environments
 .pixi
 *.egg-info
+bucky_max.jpg
+bucky_opencv.jpg

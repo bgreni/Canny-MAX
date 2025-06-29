@@ -2,10 +2,12 @@
 authors = ["Brian Grenier <grenierb96@gmail.com>"]
 channels = ["https://conda.modular.com/max-nightly", "conda-forge"]
 name = "mojo-hack"
-platforms = ["osx-arm64"]
+platforms = ["osx-arm64", "linux-64"]
 version = "0.1.0"
 
 [tasks]
 
 [dependencies]
 max = ">=25.5.0.dev2025062705,<26"
+py-opencv = ">=4.11.0,<5"
+numpy = ">=2.3.0,<3"

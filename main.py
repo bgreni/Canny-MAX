@@ -64,8 +64,11 @@ if __name__ == "__main__":
     img_orig = cv.imread("bucky_birthday.jpeg")
     
     # img_orig = cv.cvtColor(img_orig, cv.COLOR_BGR2GRAY)
-
-    device = Accelerator()
+    device: Device
+    try:
+        device = Accelerator()
+    except:
+        device = CPU()
 
     img = Tensor.from_numpy(img_orig).to(device)
 
@@ -161,7 +164,7 @@ if __name__ == "__main__":
     c = cv.Canny(img_orig, 100, 200)
     end = perf_counter()
     print('OpenCV took:', end-start)
-    # cv.imshow('res',res)
-    # cv.imshow('ocv', c)
-    # cv.waitKey(0)
-    # cv.destroyAllWindows()
+    cv.imshow('res',res)
+    cv.imshow('ocv', c)
+    cv.waitKey(0)
+    cv.destroyAllWindows()
